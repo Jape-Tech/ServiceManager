@@ -2,7 +2,7 @@
 
 namespace JaPe.ServiceManager.Cli.Commands.Service;
 
-public class ServiceCommand:Command
+internal sealed class ServiceCommand : Command
 {
     public ServiceCommand()
         : base("service", "Manage Windows services.")

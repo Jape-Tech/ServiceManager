@@ -1,7 +1,7 @@
 ﻿using System.CommandLine;
 namespace JaPe.ServiceManager.Cli.Commands.Service;
 
-internal sealed class ServiceListCommand:Command
+internal sealed class ServiceListCommand : Command
 {
 
    private readonly Option<bool> _jsonOption = new(name: "--json")

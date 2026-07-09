@@ -1,4 +1,4 @@
-﻿ using JaPe.ServiceManager.Cli.Commands;
+﻿using JaPe.ServiceManager.Cli.Commands;
  
- var root = new CliRootCommand();
- root.Parse(args).Invoke();
+var root = new CliRootCommand();
+return root.Parse(args).Invoke();
