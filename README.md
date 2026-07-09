@@ -35,10 +35,10 @@ Managing Windows services programmatically often requires combining multiple too
 
 JaPe.ServiceManager aims to provide a single, consistent interface for all of these tasks.
 
-## Planned features
+## Roadmap
 
-- ✅ Create services
-- ✅ Update existing services
+- ⏳ Create services
+- ⏳ Update existing services 
 - ⏳ Remove services
 - ⏳ Start / stop / restart
 - ⏳ Configure failure actions
