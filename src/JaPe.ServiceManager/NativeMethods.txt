@@ -1,0 +1,7 @@
+﻿OpenSCManager
+OpenService
+QueryServiceStatusEx
+CloseServiceHandle
+CreateService
+SERVICE_STATUS_PROCESS
+SERVICE_START_TYPE
