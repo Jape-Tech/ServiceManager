@@ -1,0 +1,11 @@
+﻿OpenSCManager
+OpenService
+QueryServiceStatusEx
+CloseServiceHandle
+CreateService
+EnumServicesStatusEx
+QueryServiceObjectSecurity
+SetServiceObjectSecurity
+SERVICE_STATUS_PROCESS
+SERVICE_START_TYPE
+ENUM_SERVICE_STATUS_PROCESSW
