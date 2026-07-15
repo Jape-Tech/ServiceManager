@@ -3,10 +3,11 @@ using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 using Windows.Win32;
 using Windows.Win32.System.Services;
+using JaPe.ServiceManager.Enums;
 
 namespace JaPe.ServiceManager.Native;
 [SupportedOSPlatform("windows5.1.2600")]
-public sealed partial class ServiceControlManager : IDisposable
+internal sealed partial class ServiceControlManager : IDisposable
 {
     
     private readonly CloseServiceHandleSafeHandle _scmHandle;
@@ -15,12 +16,12 @@ public sealed partial class ServiceControlManager : IDisposable
     {
         _scmHandle = scmHandle;
     }
-    public static ServiceControlManager Open()
+    public static ServiceControlManager Open(uint desiredAccess = NativeConstants.ScManagerCreateService)
     {
         var handle = PInvoke.OpenSCManager(
             lpMachineName: null,
             lpDatabaseName: null,
-            dwDesiredAccess: NativeConstants.ScManagerCreateService);
+            dwDesiredAccess: desiredAccess); 
         
         if (handle.IsInvalid) ThrowLastWin32Error("Failed to open Service Control Manager");
         

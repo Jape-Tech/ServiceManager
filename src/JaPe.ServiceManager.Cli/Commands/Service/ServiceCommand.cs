@@ -8,6 +8,8 @@ internal sealed class ServiceCommand : Command
         : base("service", "Manage Windows services.")
     {
        Subcommands.Add(new ServiceListCommand());
+       Subcommands.Add(new ServiceInfoCommand());
+       Subcommands.Add(new ServiceInstallCommand());
     }
     
 }

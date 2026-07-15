@@ -1,4 +1,6 @@
 ﻿using System.CommandLine;
+using JaPe.ServiceManager.Models;
+
 namespace JaPe.ServiceManager.Cli.Commands.Service;
 
 internal sealed class ServiceListCommand : Command
@@ -18,6 +20,8 @@ internal sealed class ServiceListCommand : Command
    
    private int Execute(ParseResult parseResult)
    {
+      var jpsm = new ServiceManager();
+      var services = jpsm.GetServices();
       var json = parseResult.GetValue<bool>(_jsonOption);
       if (json)
       {
@@ -25,7 +29,10 @@ internal sealed class ServiceListCommand : Command
       }
       else 
       {
-         parseResult.InvocationConfiguration.Output.WriteLine("Service listing is not yet implemented.");
+         foreach (var service in services)
+         {
+            parseResult.InvocationConfiguration.Output.WriteLine(service.Name);
+         }
       }
       return 0;
    }

@@ -1,0 +1,25 @@
+﻿services:
+  - name: Service_1
+    displayName: Some service
+    description: Some service for some reason
+    binaryPath: '"d:\ServerService\ServerService.exe" "Some_Service \\server.tld.com\BIN_SERVER\Server.exe -config="'
+    startType: Automatic
+    serviceUser: '.\service_account'
+    password: 'Password_123'
+    startStopUsers:
+      - "ServiceOperators"
+  - name: Service_2
+    displayName: Other service
+    description: Other service for some reason
+    exePath: 'd:\ServerService\ServerService.exe'
+    arguments:
+      - 'Other_service'
+      - '\\server.tld.com\BIN_SERVER\Server.exe'
+      - '-config=\\server.tld.com\conf\services\Other_service.config'
+      - '-db=SID'
+      - '-mode=C'
+    startType: Automatic
+    serviceUser: '.\service_account'
+    password: 'Password_123'
+    startStopUsers:
+      - "ServiceOperators"

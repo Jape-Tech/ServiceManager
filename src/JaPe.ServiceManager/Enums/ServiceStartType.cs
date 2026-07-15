@@ -1,4 +1,4 @@
-﻿namespace JaPe.ServiceManager;
+﻿namespace JaPe.ServiceManager.Enums;
 
 public enum ServiceStartType
 {
